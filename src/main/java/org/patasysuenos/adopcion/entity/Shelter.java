@@ -38,6 +38,7 @@ public class Shelter {
     @NotBlank(message = "el email del refugio no debe estar vacio")
     @Email(message = "el email no es válido")
     @Size(max = 255, message = "el email no puede exceder 255 caracteres")
+    @Column(unique = true)
     private String email;
     @NotBlank(message = "la ciudad del refugio no debe estar vacia")
     @Size(max = 100, message = "la ciudad no puede exceder 100 caracteres")
@@ -45,6 +46,7 @@ public class Shelter {
     @NotBlank(message = "el departamento del refugio no debe estar vacio")
     @Size(max = 100, message = "el departamento no puede exceder 100 caracteres")
     private String state;
+    private String imageUrl;
 
     //auditoria
     @CreationTimestamp
