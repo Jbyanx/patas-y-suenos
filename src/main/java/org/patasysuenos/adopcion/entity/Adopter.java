@@ -13,6 +13,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "adopters")
@@ -49,4 +50,8 @@ public class Adopter {
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    //relacion con AdoptionRequest
+    @OneToMany(mappedBy = "adopter", fetch = FetchType.LAZY)
+    private List<AdoptionRequest> adoptionRequestsList;
 }

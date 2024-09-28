@@ -16,6 +16,7 @@ import org.patasysuenos.adopcion.utils.PetGender;
 import org.patasysuenos.adopcion.utils.PetSpecie;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "pets")
@@ -52,4 +53,8 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "shelter_id")
     private Shelter shelter;
+
+    //relacion con AdoptionRequest
+    @OneToMany(mappedBy = "pet", fetch = FetchType.LAZY)
+    private List<AdoptionRequest> adoptionRequestsList;
 }
