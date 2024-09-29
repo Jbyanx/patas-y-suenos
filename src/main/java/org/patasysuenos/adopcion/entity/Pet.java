@@ -31,7 +31,7 @@ public class Pet {
     @NotBlank(message = "el nombre de la mascota no puede estar vacio")
     private String name;
     @Enumerated(EnumType.STRING) @NotNull(message = "la especie de la mascota es obligatoria")
-    private PetSpecie species; //(gato, perro, conejo, etc)
+    private PetSpecie specie; //(gato, perro, conejo, etc)
     @Enumerated(EnumType.STRING) @NotNull(message = "la raza de la mascota es obligatoria")
     private PetBreed breed;// (raza de mascota según su especie)
     @Enumerated(EnumType.STRING) @NotNull(message = "el genero de la mascota es obligatorio")
