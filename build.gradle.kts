@@ -29,10 +29,11 @@ dependencies {
 	implementation ("org.mapstruct:mapstruct:1.6.2")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	compileOnly("org.projectlombok:lombok")
-	runtimeOnly("com.h2database:h2")
 	annotationProcessor("org.projectlombok:lombok")
 	annotationProcessor ("org.mapstruct:mapstruct-processor:1.6.2")
+	annotationProcessor ("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	runtimeOnly("org.postgresql:postgresql")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
