@@ -21,9 +21,4 @@ public record GetPet(
         List<GetAdoptionRequest> adoptionRequests
 ) implements Serializable {
 
-    private static record GetAdoptionRequest(
-            String adopterName,
-            LocalDateTime requestDate,
-            AdoptionStatus status
-    )implements Serializable{}
 }
