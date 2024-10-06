@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public record GetPet(
+        long id,
         String name,
         PetSpecie specie,
         PetBreed breed,
