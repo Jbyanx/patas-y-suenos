@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public record GetAdopter(
+        long id,
         String name,
         String lastname,
         String email,

@@ -12,6 +12,5 @@ public record GetAdoptionRequest(
         LocalDateTime requestDate,
         AdoptionStatus status,
         String comments
-
 ) implements Serializable {
 }
