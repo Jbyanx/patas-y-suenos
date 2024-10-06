@@ -1,17 +1,33 @@
 package org.patasysuenos.adopcion.mapper;
 
 import org.mapstruct.*;
+import org.mapstruct.factory.Mappers;
+import org.patasysuenos.adopcion.dto.request.SaveAdopter;
 import org.patasysuenos.adopcion.dto.response.GetAdopter;
 import org.patasysuenos.adopcion.entity.Adopter;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+import java.util.List;
+
+@Mapper(uses = {AdoptionRequestMapper.class})
 public interface AdopterMapper {
 
-    @Mappings({
-            @Mapping(source = "createdAt", target = "registrationDate", dateFormat = "yyy-MM-dd HH:mm:ss")
-    })
-    GetAdopter toGetDTO(Adopter adopter);
+    AdopterMapper INSTANCE = Mappers.getMapper(AdopterMapper.class);
+
+    @Mapping(source = "createdAt", target = "registrationDate", dateFormat = "yyy-MM-dd HH:mm:ss")
+    GetAdopter adopterToGetAdopter(Adopter adopter);
 
     @InheritInverseConfiguration
-    Adopter toEntity(GetAdopter getAdopter);
+    Adopter getAdopterToAdopter(GetAdopter getAdopter);
+
+    List<GetAdopter> adopterListToGetAdopterList(List<Adopter> adopterList);
+
+    List<Adopter> getAdopterListToAdopterList(List<Adopter> adopterList);
+
+    SaveAdopter adopterToSaveAdopter(Adopter adopter);
+
+    @InheritInverseConfiguration
+    Adopter saveAdopterToAdopter(SaveAdopter saveAdopter);
+
+    List<SaveAdopter> adopterListToSaveAdopterList(List<Adopter> adopterList);
+    List<Adopter> saveAdopterListToAdopterList(List<GetAdopter> getAdopterList);
 }
