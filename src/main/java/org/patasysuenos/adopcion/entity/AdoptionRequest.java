@@ -33,7 +33,7 @@ public class AdoptionRequest {
     private LocalDateTime requestDate;
 
     @Enumerated(EnumType.STRING) @NotNull(message = "el estado de la solicitud no debe estar vacio")
-    private AdoptionStatus status; // Podría ser PENDING, APPROVED, REJECTED
+    private AdoptionStatus status = AdoptionStatus.PENDING; // Podría ser PENDING, APPROVED, REJECTED
 
     @Size(max = 1000, message = "los comentarios no deben exceder 1000 caracteres")
     @Column(length = 1000)
