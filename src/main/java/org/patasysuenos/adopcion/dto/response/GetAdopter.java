@@ -1,8 +1,7 @@
 package org.patasysuenos.adopcion.dto.response;
 
-import org.patasysuenos.adopcion.utils.AdoptionStatus;
-
 import java.io.Serializable;
+import java.util.List;
 
 public record GetAdopter(
         String name,
@@ -12,13 +11,9 @@ public record GetAdopter(
         String address,
         String city,
         String state,
-        String registrationDate
+        String imageUrl,
+        String registrationDate,
+        List<GetAdoptionRequest> adoptionRequestList
 ) implements Serializable {
 
-    public static record getAdoptionRequests(
-        long id,
-        long petId,
-        String petName,
-        AdoptionStatus status
-    ) implements Serializable {}
 }
