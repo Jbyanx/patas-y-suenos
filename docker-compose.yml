@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.3  # Usará la imagen oficial de Postgres 15.3
+    environment:
+      POSTGRES_USER: "jabes"  # Usuario de Postgres
+      POSTGRES_PASSWORD: "sebaj"  # Contraseña de Postgres
+      POSTGRES_DB: "adoption_db"  # Base de datos a crear
+    ports:
+      - "15432:5432"  # Mapea el puerto 5432 del contenedor al puerto 15432 en tu máquina
