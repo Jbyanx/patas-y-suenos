@@ -28,6 +28,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation ("org.mapstruct:mapstruct:1.6.2")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.flywaydb:flyway-core:9.22.0") // Cambia a la última versión
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	annotationProcessor ("org.mapstruct:mapstruct-processor:1.6.2")
